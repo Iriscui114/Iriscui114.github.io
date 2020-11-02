@@ -2,17 +2,181 @@
 <html lang="zh-CN">
 
 <head>
-	
-	<title></title>
-	
+    <meta charset="utf-8" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <title>3d旋转</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .article {
+            margin: 200px auto;
+            perspective: 1100px;
+        }
+
+        .threeD {
+            transform-style: preserve-3d;
+            position: relative;
+            margin: 200px auto;
+            width: 400px;
+            height: 400px;
+            animation: threeD 12s linear infinite;
+
+        }
+
+        .threeD>div {
+           
+            opacity: 0.3;
+            position: absolute;
+            outline: 3px solid rgb(255, 0, 21);
+            width: 400px;
+            height: 400px;
+        }
+
+        .threeD>div:nth-child(1) {
+            transform: translateZ(200px);
+            background-color: rgb(245, 98, 30);
+        }
+
+        .threeD>div:nth-child(2) {
+            transform: rotateY(180deg) translateZ(200px);
+            background-color: rgb(243, 246, 20);
+        }
+
+        .threeD>div:nth-child(3) {
+            transform: rotateY(90deg) translateZ(200px);
+            background-color: rgb(224, 20, 13);
+        }
+
+        .threeD>div:nth-child(4) {
+            transform: rotateY(-90deg) translateZ(200px);
+            background-color: rgb(15, 195, 250);
+        }
+
+        .threeD>div:nth-child(5) {
+            transform: rotateX(90deg) translateZ(200px);
+            background-color: rgb(221, 52, 243);
+        }
+
+        .threeD>div:nth-child(6) {
+            transform: rotateX(-90deg) translateZ(200px);
+            background-color: rgb(9, 139, 31);
+        }
+
+        @keyframes threeD {
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        /* 圆柱 */
+        .yuanzhu{
+            transform-style: preserve-3d;
+            position: relative;
+            margin: 200px auto 0px;
+            width: 200px;
+            height: 200px;
+            animation: yuanzhu 8s linear infinite;
+            transform: rotateX(-0deg);
+        }
+        @keyframes yuanzhu {
+           
+            from {
+				transform: rotateX(-20deg) rotateY(0deg);
+			}
+			to{
+				transform: rotateX(-20deg) rotateY(-360deg);
+			}
+        }
+
+        .yuanzhu>div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+        }
+       .yuanzhu>div:first-child {
+            border: 2px rgb(13, 14, 14) solid;
+            border-top: 0;
+            border-bottom: 0;
+            background: rgba(13, 14, 14,0.3);
+        }
+
+       .yuanzhu>div:nth-child(2) {
+            border: 2px rgb(250, 5, 209) solid;
+            background: rgba(250, 5, 209,0.3);
+            border-top: none;
+            border-bottom: none;
+            transform: translateX(0px) rotateY(45deg);
+        }
+
+       .yuanzhu>div:nth-child(3) {
+            border: 2px rgb(8, 238, 8) solid;
+            background: rgba(8, 238, 8,0.3);
+            border-top: none;
+            border-bottom: none;
+            transform: translateX(0px) rotateY(90deg);
+        }
+
+       .yuanzhu>div:nth-child(4) {
+            border: 2px rgb(248, 135, 6) solid;
+            background: rgba(248, 135, 6,0.3);
+            border-top: none;
+            border-bottom: none;
+            transform: translateX(0px) rotateY(135deg);
+        }
+        .yuanzhu>div:nth-child(5) {
+            border-radius: 50%;
+            border: 2px rgb(159, 250, 253) solid;
+            background: rgba(179, 241, 243, 0.3);
+            border-top: none;
+            border-bottom: none;
+            transform: translateY(-100px) rotateX(90deg);
+        }
+        .yuanzhu>div:nth-child(6) {
+            border-radius: 50%;
+            border: 2px rgb(162, 240, 236) solid;
+            background: rgba(159, 226, 226, 0.3);
+            border-top: none;
+            border-bottom: none;
+            transform: translateY(100px) rotateX(90deg);
+        }
+    </style>
+
 </head>
 
 <body>
-	<div id="wrapper">
-	<a href="http://" target="_blank" rel="noopener noreferrer">3f</a>
+    <div id="wrapper">
+        <article class="article">
+            <div class="threeD">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            
+            
+        </article>
+        <!-- 圆柱 -->
+        <article class="article">
+            <div class="yuanzhu">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </article>
 
 
-	</div>
+    </div>
 </body>
 
 </html>
